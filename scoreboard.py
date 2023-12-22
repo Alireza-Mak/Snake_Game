@@ -1,6 +1,8 @@
 from turtle import Turtle
 ALIGNMENT = "center"
-FONT = ("Courier", 24, "normal")
+FONT1 = ("Courier", 24, "normal")
+FONT2 = ("Courier", 20, "bold")
+FONT3 = ("Courier", 16, "bold")
 
 
 # TODO 6: Create Food class for snake and its methods
@@ -16,11 +18,15 @@ class Scoreboard(Turtle):
         self.update_scoreboard()
 
     def update_scoreboard(self):
-        self.write(f"Score: {self.score}", align=ALIGNMENT, font=FONT)
+        self.write(f"Score: {self.score}", align=ALIGNMENT, font=FONT1)
 
     def game_over(self):
         self.goto(0, 0)
-        self.write("GAME OVER", align=ALIGNMENT, font=FONT)
+        self.write("GAME OVER", align=ALIGNMENT, font=FONT1)
+        self.goto(0, -50)
+        self.write("Created by Alireza Mak.", align=ALIGNMENT, font=FONT2)
+        self.goto(0, -100)
+        self.write("Alirezamak.com", align=ALIGNMENT, font=FONT3)
 
     def increase_score(self):
         self.score += 1
